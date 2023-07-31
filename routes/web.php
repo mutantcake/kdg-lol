@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\registerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,7 @@ Route::get('/', function () {
 Route::get('/reservations', function () {
     return view('reservations');
 })->name('reservations');
+
+Route::get('admin',[registerController::class,'adminRegister']);
+Route::get('manager',[registerController::class,'managerRegister']);
+Route::get('client',[registerController::class,'clientRegister']);
